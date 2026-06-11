@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lobby</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div id="app">
+
+  <!-- Sidebar -->
+  <div id="sidebar">
+    <div id="sidebar-header">Players</div>
+    <ul id="player-list"></ul>
+  </div>
+
+  <!-- Chat column -->
+  <div id="chat-column">
+
+  <!-- Header -->
+  <div id="header">
+    <h1>Lobby</h1>
+    <div id="room-controls">
+      <div id="room-global-actions">
+        <span id="room-global-label">Main Lobby</span>
+        <button id="room-create" title="Create a private room">＋ Lobby</button>
+        <div id="room-join-row">
+          <input id="join-input" type="text" placeholder="Lobby code" maxlength="6" spellcheck="false">
+          <button id="join-btn">Join Lobby</button>
+        </div>
+        <span id="join-error"></span>
+      </div>
+      <div id="room-indicator">
+        <span id="room-code-display"></span>
+        <button id="room-copy" title="Copy join code">Copy</button>
+        <button id="room-leave">Leave Lobby</button>
+      </div>
+    </div>
+    <span id="username-display"></span>
+  </div>
+
+  <!-- Connection lost banner -->
+  <div id="conn-banner">Connection lost — reconnecting…</div>
+
+  <!-- Messages -->
+  <div id="messages-area">
+    <div id="empty-state">No messages yet. Make some noise!</div>
+  </div>
+
+  <!-- Compose bar -->
+  <div id="compose">
+    <!-- Reply strip -->
+    <div id="reply-strip">
+      <span class="strip-author"></span>
+      <span class="strip-text"></span>
+      <button id="reply-cancel" class="strip-cancel" title="Cancel reply">✕</button>
+    </div>
+
+    <!-- Schedule strip -->
+    <div id="schedule-strip">
+      <label for="scheduled-for">Send at:</label>
+      <input id="scheduled-for" type="datetime-local">
+    </div>
+
+    <!-- Input row -->
+    <div id="input-row">
+      <textarea id="text" placeholder="Message" rows="1"></textarea>
+      <button id="clear-btn" title="Clear view">🗑</button>
+      <button id="schedule-toggle" title="Schedule message">🕐</button>
+      <button id="send-btn" title="Send">&#10148;</button>
+    </div>
+  </div>
+
+  </div><!-- /#chat-column -->
+
+</div>
+
+<!-- Username overlay -->
+<div id="username-overlay">
+  <div id="username-form">
+    <h2>Choose your callsign</h2>
+    <input id="username-input" type="text" placeholder="Enter your name" maxlength="40">
+    <button id="username-save">Enter Lobby</button>
+  </div>
+</div>
+
+<script type="module" src="app.js"></script>
+</body>
+</html>
